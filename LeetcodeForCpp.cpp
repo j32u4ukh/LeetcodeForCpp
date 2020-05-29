@@ -7,7 +7,7 @@
 
 using namespace std;
 
-enum class Color :int {
+enum class Color : int {
     red,
     green,
     blue
@@ -18,101 +18,6 @@ template <typename Enumeration>
 auto as_integer(Enumeration const value) -> typename underlying_type<Enumeration>::type
 {
     return static_cast<typename underlying_type<Enumeration>::type>(value);
-}
-
-/*
-Symbol       Value
-I             1
-V             5
-X             10
-L             50
-C             100
-D             500
-M             1000
-===================
-III:          3
-IV:           4
-IX:           9
-LVIII:        58
-MCMXCIV:      1994
-*/
-
-unordered_map<char, int> roman_map = {
-    {'I', 1},
-    {'V', 5},
-    {'X', 10},
-    {'L', 50},
-    {'C', 100},
-    {'D', 500},
-    {'M', 1000},
-};
-
-bool biggerRoman(char curr_char, char pre_char = NULL) {
-    if (pre_char == NULL) {
-        return true;
-    }
-    else {
-        return roman_map[curr_char] >= roman_map[pre_char];
-    }
-}
-
-vector<string> subRoman(string roman) {    
-    string first;
-    vector<string> second;
-    int i, len = roman.length();
-
-    if (len > 1) {
-        for (i = 1; i < len; i++) {
-            // 若目前這個字元 小於 前一個字元
-            if (!biggerRoman(roman[i], roman[i - 1])) {
-                break;
-            }
-        }
-
-        first = roman.substr(0, i);
-
-        if (len - i > 0) {
-            second = subRoman(roman.substr(i, len - i));
-        }
-    }
-    else if (len == 1) {
-        first = roman;
-    }
-
-    vector<string> sub_roman = {first};
-
-    for(string s : second) {
-        sub_roman.push_back(s);
-    }
-
-    return sub_roman;
-}
-
-int computeRomanValue(string roman) {
-    int i, len = roman.length(), value = roman_map[roman[len - 1]];
-
-    for (i = len - 2; i >= 0; i--) {
-        if (roman[i] == roman[i + 1]) {
-            value += roman_map[roman[i]];
-        }
-        else {
-            value -= roman_map[roman[i]];
-        }
-    }
-
-    return value;
-}
-
-int romanToInt(string s) {
-    int value = 0;
-    vector<string> sub_roman = subRoman(s);
-
-    for (string sub : sub_roman) {
-        value += computeRomanValue(sub);
-        cout << sub << ": " << computeRomanValue(sub) << endl;
-    }
-
-    return value;
 }
 
 ostream& operator<<(ostream& os, const vector<string>& vec) {
@@ -135,18 +40,8 @@ int main()
     // 參考：https://www.tutorialspoint.com/function-pointer-to-member-function-in-cplusplus
     */
     // tester.twoSum(&solution, &Solution::twoSum);
+    // tester.romanToInt(&solution, &Solution::romanToInt);
+    //tester.longestCommonPrefix(&solution, &Solution::longestCommonPrefix);
 
-    string questions[] = {"III", "IV", "IX", "LVIII", "MCMXCIV", "DCXXI" };
-    int answers[] = {3, 4, 9, 58, 1994, 621};
-
-    int i, len = sizeof(questions) / sizeof(questions[0]);
-    cout << "len: " << len << endl;
-
-    for (i = 0; i < len; i++) {
-        string question = questions[i];
-        int answer = answers[i];
-        int value = romanToInt(question);
-        cout << question << ": " << value << " >>> " << (value == answer) << endl;
-        cout << "====================" << endl;
-    }
+    tester.isValid(&solution, &Solution::isValid);
 }

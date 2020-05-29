@@ -27,3 +27,66 @@ void Tester::twoSum(Solution* sol, vector<int>(Solution::* func)(vector<int>&, i
     }
     cout << endl;
 };
+
+void Tester::romanToInt(Solution* sol, int(Solution::* func)(string s))
+{
+    string questions[] = { "III", "IV", "IX", "LVIII", "MCMXCIV", "DCXXI" };
+    int answers[] = { 3, 4, 9, 58, 1994, 621 };
+
+    int i, len = sizeof(questions) / sizeof(questions[0]);
+    cout << "len: " << len << endl;
+
+    for (i = 0; i < len; i++) {
+        string question = questions[i];
+        int answer = answers[i];
+        int value = (sol->*func)(question);
+        cout << question << ": " << value << " >>> " << (value == answer) << endl;
+        cout << "====================" << endl;
+    }
+};
+
+void Tester::longestCommonPrefix(Solution* sol, string(Solution::* func)(vector<string>& strs)) {
+    vector<vector<string>> questions = { 
+        { "flower","flow","flight" },
+        {"dog","racecar","car"},
+        {},
+        {"tokyo"}
+    };
+
+    vector<string> answers = { "fl", "" , "", "tokyo" };
+    vector<string> strs;
+    string output;
+
+    int i, len = answers.size();
+
+    for (i = 0; i < len; i++) {
+        strs = questions[i];
+        output = (sol->*func)(strs);
+
+        cout << "output: " << output << ", answer: " << answers[i];
+
+        if (output == answers[i]) {
+            cout << ", True" << endl;
+        }
+        else {
+            cout << ", False" << endl;
+        }
+    }
+}
+
+void Tester::isValid(Solution* sol, bool(Solution::* func)(string s))
+{
+    string questions[] = { "()", "()[]{}", "(]", "([)]", "{[]}", ""};
+    bool answers[] = { true, true, false, false, true, true };
+
+    int i, len = sizeof(answers) / sizeof(answers[0]);
+
+    for (i = 0; i < len; i++) {
+        string question = questions[i];
+        bool answer = answers[i];
+        bool result = (sol->*func)(question);
+        cout << question << ": " << result << " >>> " << (result == answer) << endl;
+        cout << "====================" << endl;
+    }
+
+}
