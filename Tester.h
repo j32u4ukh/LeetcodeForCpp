@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include "Solution.h"
+#include "leetcode.h"
 
 using namespace std;
 

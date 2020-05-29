@@ -4,6 +4,7 @@
 
 #include "Solution.h"
 #include "Tester.h"
+#include "leetcode.h"
 
 using namespace std;
 
@@ -42,6 +43,11 @@ int main()
     // tester.twoSum(&solution, &Solution::twoSum);
     // tester.romanToInt(&solution, &Solution::romanToInt);
     //tester.longestCommonPrefix(&solution, &Solution::longestCommonPrefix);
+    //tester.isValid(&solution, &Solution::isValid);
 
-    tester.isValid(&solution, &Solution::isValid);
+    ListNode list_node(1);
+    cout << "val: " << list_node.val << endl;
+    //list_node.addNode(2);
+    //list_node.addNode(4);
+    cout << list_node.toString() << endl;
 }

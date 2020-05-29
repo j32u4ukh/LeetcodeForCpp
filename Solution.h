@@ -3,6 +3,8 @@
 #include <string>
 #include <unordered_map>
 
+#include "leetcode.h"
+
 using namespace std;
 
 class Solution {
@@ -17,5 +19,6 @@ public:
     int romanToInt(string s);
     string longestCommonPrefix(vector<string>& strs);
     bool isValid(string s);
+    ListNode* mergeTwoLists(ListNode* l1, ListNode* l2);
 };
 

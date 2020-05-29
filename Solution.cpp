@@ -247,3 +247,7 @@ int findRightParentheses(char left_parentheses, string s, char right_parentheses
 }
 #pragma endregion
 
+ListNode* Solution::mergeTwoLists(ListNode* l1, ListNode* l2)
+{
+    return nullptr;
+}
