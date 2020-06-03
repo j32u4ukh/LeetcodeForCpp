@@ -90,3 +90,8 @@ void Tester::isValid(Solution* sol, bool(Solution::* func)(string s))
     }
 
 }
+
+void Tester::mergeTwoLists(Solution* sol, ListNode* (Solution::* func)(ListNode* l1, ListNode* l2))
+{
+
+}

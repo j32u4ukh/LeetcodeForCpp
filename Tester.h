@@ -1,3 +1,5 @@
+#ifndef _TESTER_H_
+#define _TESTER_H_
 #pragma once
 #include <vector>
 #include "Solution.h"
@@ -16,5 +18,6 @@ public:
 	void romanToInt(Solution* sol, int(Solution::* func)(string s));
 	void longestCommonPrefix(Solution* sol, string(Solution::* func)(vector<string>& strs));
 	void isValid(Solution* sol, bool(Solution::* func)(string s));
+	void mergeTwoLists(Solution* sol, ListNode* (Solution::* func)(ListNode* l1, ListNode* l2));
 };
-
+#endif _TESTER_H_

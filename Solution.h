@@ -1,3 +1,5 @@
+#ifndef _SOLUTION_H_
+#define _SOLUTION_H_
 #pragma once
 #include <vector>
 #include <string>
@@ -21,4 +23,4 @@ public:
     bool isValid(string s);
     ListNode* mergeTwoLists(ListNode* l1, ListNode* l2);
 };
-
+#endif _SOLUTION_H_

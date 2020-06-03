@@ -23,6 +23,7 @@ unordered_map<char, int> Solution::roman_map = {
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 string subString(string str, int from, int to);
 int findRightParentheses(char left_parentheses, string s, char right_parentheses);
+int getListNodeDepth(ListNode* list_node);
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void Solution::classFunctionPointer(int val) {
@@ -247,7 +248,94 @@ int findRightParentheses(char left_parentheses, string s, char right_parentheses
 }
 #pragma endregion
 
+#pragma region mergeTwoLists
 ListNode* Solution::mergeTwoLists(ListNode* l1, ListNode* l2)
 {
-    return nullptr;
+    int len1 = getListNodeDepth(l1), len2 = getListNodeDepth(l2);
+
+    // 判斷個別長度，若有 ListNode 為 0 的，則返回另一個 ListNode
+    if ((len1 == 0) || (len2 == 0)) {
+        if ((len1 == 0) && (len2 == 0)) {
+            return nullptr;
+        }
+        else {
+            if (len1 == 0) {
+                return l2;
+            }
+            else {
+                return l1;
+            }
+        }
+    }
+    else {
+        ListNode* merge_list, * node, * node1, * node2;
+
+        if (l1->val < l2->val) {
+            node = new ListNode(l1->val);
+            node1 = l1->next;
+            node2 = l2;
+        }
+        else {
+            node = new ListNode(l2->val);
+            node1 = l1;
+            node2 = l2->next;
+        }
+
+        merge_list = node;
+
+        // node1, node2 都為空時，結束迴圈
+        while ((node1 != nullptr) || (node2 != nullptr)) {
+            // node1, node2 都不為空
+            if ((node1 != nullptr) && (node2 != nullptr)) {
+                // node1 數值較小
+                if (node1->val <= node2->val) {
+                    node->next = new ListNode(node1->val);
+                    node1 = node1->next;
+                }
+
+                // node2 數值較小
+                else {
+                    node->next = new ListNode(node2->val);
+                    node2 = node2->next;
+                }
+            }
+
+            // node1, node2 其中一個為空
+            else {
+                // node1 不為空
+                if (node2 == nullptr) {
+                    node->next = new ListNode(node1->val);
+                    node1 = node1->next;
+                }
+
+                // node2 不為空
+                else {
+                    node->next = new ListNode(node2->val);
+                    node2 = node2->next;
+                }
+            }
+
+            //cout << (*node).val << endl;
+            node = node->next;
+        }
+
+        return merge_list;
+    }
 }
+
+int getListNodeDepth(ListNode* list_node) {
+    int depth = 1;
+
+    ListNode* node = list_node;
+
+    // 計算 ListNode 深度
+    while (node->next != nullptr)
+    {
+        node = node->next;
+        depth++;
+    }
+
+    return depth;
+}
+#pragma endregion
+
