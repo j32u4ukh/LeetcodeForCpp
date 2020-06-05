@@ -22,13 +22,23 @@ auto as_integer(Enumeration const value) -> typename underlying_type<Enumeration
     return static_cast<typename underlying_type<Enumeration>::type>(value);
 }
 
-ostream& operator<<(ostream& os, const vector<string>& vec) {
-    os << "[" << vec[0];
-    int i;
-    for (i = 1; i < vec.size(); i++) {
-        os << ", " << vec[i];
+template<typename T>
+ostream& operator<<(ostream& os, const vector<T>& vec) {
+    stringstream ss;
+    ss << "[";
+
+    int len = vec.size();
+    if (len > 0) {
+        ss << vec[0];
+
+        int i;
+        for (i = 1; i < vec.size(); i++) {
+            ss << ", " << vec[i];
+        }
     }
-    os << "]";
+
+    ss << "]";
+    os << ss.str();
     return os;
 }
 
@@ -45,72 +55,30 @@ int main()
     // tester.romanToInt(&solution, &Solution::romanToInt);
     //tester.longestCommonPrefix(&solution, &Solution::longestCommonPrefix);
     //tester.isValid(&solution, &Solution::isValid);
+    //tester.mergeTwoLists(&solution, &Solution::mergeTwoLists);
+    tester.removeDuplicates(&solution, &Solution::removeDuplicates);
+    //vector<int> nums = { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 };
+    //int len = solution.removeDuplicates(nums);
+    //cout << "nums: " << nums << endl;
 
-    //ListNode *list1 = new ListNode(1);
-    //(*list1).addNode(2);
-    //(*list1).addNode(4);
-    vector<int> vi1 = { 1, 2, 4 };
-    ListNode *list1 = vectorToListNode(vi1);
-    cout << "list1:" << (*list1).toString() << endl;
+    //vector<int>::iterator it;
+    //int last;
 
-    ListNode list2(1);
-    list2.addNode(3);
-    list2.addNode(4);
-    cout << "list2:" << list2.toString() << endl;
-    ListNode* merge_list = solution.mergeTwoLists(list1, &list2);
-    //ListNode* merge_list, * node, * node1, * node2;
-
-    //if (list1.val < list2.val) {
-    //    node = new ListNode(list1.val);
-    //    node1 = list1.next;
-    //    node2 = &list2;
-    //}
-    //else {
-    //    node = new ListNode(list2.val);
-    //    node1 = &list1;
-    //    node2 = list2.next;
+    //if (nums.size() > 0) {
+    //    last = nums[0];
+    //    cout << "last: " << last << endl;
     //}
 
-    //merge_list = node;
-
-    //cout << (*merge_list).val << endl;
-
-    //// node1, node2 都為空時，結束迴圈
-    //while ((node1 != nullptr) || (node2 != nullptr)) {
-    //    // node1, node2 都不為空
-    //    if ((node1 != nullptr) && (node2 != nullptr)) {
-    //        // node1 數值較小
-    //        if (node1->val <= node2->val) {
-    //            node->next = new ListNode(node1->val);
-    //            node1 = node1->next;
-    //        }
-
-    //        // node2 數值較小
-    //        else {
-    //            node->next = new ListNode(node2->val);
-    //            node2 = node2->next;
-    //        }
+    //for (it = nums.begin() + 1; it != nums.end(); it++) {
+    //    if (*it == last) {
+    //        it = nums.erase(it);
+    //        it--;
     //    }
-
-    //    // node1, node2 其中一個為空
     //    else {
-    //        // node1 不為空
-    //        if (node2 == nullptr) {
-    //            node->next = new ListNode(node1->val);
-    //            node1 = node1->next;
-    //        }
-
-    //        // node2 不為空
-    //        else {
-    //            node->next = new ListNode(node2->val);
-    //            node2 = node2->next;
-    //        }
+    //        last = *it;
+    //        cout << "last: " << last << endl;
     //    }
-
-    //    cout << (*node).val << endl;
-    //    node = node->next;
     //}
 
-    cout << "merge_list:" << (*merge_list).toString() << endl;
-
+    //cout << "length: " << nums.size() << endl;
 }

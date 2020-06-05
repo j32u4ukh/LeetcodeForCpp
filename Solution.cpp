@@ -324,18 +324,69 @@ ListNode* Solution::mergeTwoLists(ListNode* l1, ListNode* l2)
 }
 
 int getListNodeDepth(ListNode* list_node) {
-    int depth = 1;
+    int depth = 0;
 
-    ListNode* node = list_node;
-
-    // 計算 ListNode 深度
-    while (node->next != nullptr)
-    {
-        node = node->next;
+    if (list_node != nullptr) {
         depth++;
+
+        ListNode* node = list_node;
+
+        // 計算 ListNode 深度
+        while (node->next != nullptr)
+        {
+            node = node->next;
+            depth++;
+        }
     }
 
     return depth;
 }
 #pragma endregion
+
+#pragma region removeDuplicates: 註解內容為更快速的版本，只需長度內的內容是它所預期的就好，不需要修改整個 vector
+int Solution::removeDuplicates(vector<int>& nums)
+{
+    /*
+    int len = static_cast<int>(nums.size());
+
+    if (len == 0 || len == 1) {
+        return len;
+    }
+    else {
+
+        int i, elements = 0, num = nums[0];
+
+        for (i = 1; i < len; i++) {
+            if (nums[i] != num) {
+                elements++;
+                num = nums[i];
+                nums[elements] = num;
+            }
+        }
+
+        return elements + 1;
+    }
+    */
+    size_t len = nums.size();
+    if (len == 0 || len == 1) {
+        return len;
+    }
+
+    vector<int>::iterator it;
+    int last = nums[0];
+
+    for (it = nums.begin() + 1; it != nums.end(); it++) {
+        if (*it == last) {
+            it = nums.erase(it);
+            it--;
+        }
+        else {
+            last = *it;
+        }
+    }
+
+    return nums.size();
+}
+#pragma endregion
+
 

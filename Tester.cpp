@@ -93,5 +93,65 @@ void Tester::isValid(Solution* sol, bool(Solution::* func)(string s))
 
 void Tester::mergeTwoLists(Solution* sol, ListNode* (Solution::* func)(ListNode* l1, ListNode* l2))
 {
+    ListNode* q1 = new ListNode(1);
+    q1->addNode(2);
+    q1->addNode(4);
 
+    ListNode* q2 = new ListNode(1);
+    q2->addNode(3);
+    q2->addNode(4);
+
+    vector<vector<ListNode*>> questions = {
+        {q1, q2},
+        {nullptr, nullptr},
+    };
+
+    ListNode* a1 = new ListNode(1);
+    a1->addNode(1);
+    a1->addNode(2);
+    a1->addNode(3);
+    a1->addNode(4);
+    a1->addNode(4);
+
+    vector<ListNode*> answers = {a1, nullptr};
+
+    vector<ListNode*> question;
+    ListNode* lq, * l1, * l2, * la;
+
+    int i, len = answers.size();
+    for (i = 0; i < len; i++) {
+        question = questions[i];
+        l1 = question[0];
+        l2 = question[1];
+        lq = (sol->*func)(l1, l2);
+
+        cout << "l1: " << l1->toString() << ", l2: " << l2->toString() << endl;
+        cout << "lq: " << lq->toString() << endl;
+
+        la = answers[i];
+        cout << "la: " << la->toString() << endl;
+        cout << "Same? " << isSameListNode(lq, la) << endl;
+        cout << "==========" << endl;
+    }
+}
+
+void Tester::removeDuplicates(Solution* sol, int(Solution::* func)(vector<int>& nums))
+{
+    vector<vector<int>> questions = {
+        {1, 1, 2},
+        {0, 0, 1, 1, 1, 2, 2, 3, 3, 4},
+
+    };
+
+    vector<int> answers = {2, 5};
+
+    int i, len = answers.size(), result;
+    vector<int> question;
+
+    for (i = 0; i < len; i++) {
+        question = questions[i];
+        result = (sol->*func)(question);
+        cout << "result: " << result << ", answer: " << answers[i] << endl;
+        cout << "Correct? " << (result == answers[i]) << endl;
+    }
 }

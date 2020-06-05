@@ -22,5 +22,6 @@ public:
     string longestCommonPrefix(vector<string>& strs);
     bool isValid(string s);
     ListNode* mergeTwoLists(ListNode* l1, ListNode* l2);
+    int removeDuplicates(vector<int>& nums);
 };
 #endif _SOLUTION_H_

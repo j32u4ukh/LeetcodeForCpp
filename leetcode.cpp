@@ -19,3 +19,27 @@ ListNode* vectorToListNode(const vector<int>& vi) {
         return list_node;
     }
 }
+
+bool isSameListNode(ListNode* l1, ListNode* l2)
+{
+    ListNode *node1 = l1, *node2 = l2;
+
+    while (node1 != nullptr && node2 != nullptr) {
+        if (node1->val != node2->val) {
+            return false;
+        }
+
+        node1 = node1->next;
+        node2 = node2->next;
+    }
+
+    if (node1 == nullptr && node2 != nullptr) {
+        return false;
+    }
+
+    if (node1 != nullptr && node2 == nullptr) {
+        return false;
+    }
+
+    return true;
+}

@@ -28,15 +28,19 @@ struct ListNode {
     }
 
     int getDepth() {
-        int depth = 1;
+        int depth = 0;
 
-        ListNode* node = this;
-
-        // 計算 ListNode 深度
-        while (node->next != nullptr)
-        {
-            node = node->next;
+        if (this != nullptr) {
             depth++;
+
+            ListNode* node = this;
+
+            // 計算 ListNode 深度
+            while (node->next != nullptr)
+            {
+                node = node->next;
+                depth++;
+            }
         }
 
         return depth;
@@ -46,14 +50,18 @@ struct ListNode {
         int d, depth = getDepth() - 1;
 
         std::stringstream ss;
-        ss << "[ " << this->val;
+        ss << "[ ";
 
-        ListNode* node = next;
+        if (this != nullptr) {
+            ss << this->val;
 
-        // d: 用於計次，而非索引值
-        for (d = 0; d < depth; d++) {
-            ss << ", " << node->val;
-            node = node->next;
+            ListNode* node = next;
+
+            // d: 用於計次，而非索引值
+            for (d = 0; d < depth; d++) {
+                ss << ", " << node->val;
+                node = node->next;
+            }
         }
 
         ss << " ]";
@@ -63,4 +71,5 @@ struct ListNode {
 };
 
 ListNode* vectorToListNode(const vector<int>& vi);
+bool isSameListNode(ListNode* l1, ListNode* l2);
 #endif _LEETCODE_H_
