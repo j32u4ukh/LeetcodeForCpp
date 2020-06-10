@@ -147,9 +147,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="leetcode_for_cpp.cpp" />
-    <ClCompile Include="solution.cpp" />
-    <ClCompile Include="tester.cpp" />
     <ClCompile Include="utils.cpp" />
     <ClCompile Include="utils_array.cpp" />
     <ClCompile Include="utils_map.cpp" />
@@ -157,9 +154,16 @@
     <ClCompile Include="utils_vector.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="solution.hpp" />
-    <ClInclude Include="tester.hpp" />
     <ClInclude Include="utils.hpp" />
+    <ClCompile Include="leetcode.cpp" />
+    <ClCompile Include="LeetcodeForCpp.cpp" />
+    <ClCompile Include="Solution.cpp" />
+    <ClCompile Include="Tester.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="leetcode.h" />
+    <ClInclude Include="Solution.h" />
+    <ClInclude Include="Tester.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

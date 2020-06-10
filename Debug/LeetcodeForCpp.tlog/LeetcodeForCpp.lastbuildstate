@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 #TargetFrameworkVersion=v4.0:PlatformToolSet=v142:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit:WindowsTargetPlatformVersion=10.0
 Debug|Win32|D:\Programing\CppProjects\CppLearning\|
+=======
+PlatformToolSet=v142:VCToolArchitecture=Native32Bit:VCToolsVersion=14.25.28610:TargetPlatformVersion=10.0.18362.0:
+Debug|Win32|D:\OpenGLearning\LeetcodeForCpp\|
+>>>>>>> 34a43aa9bfa2ae6f414999d01c8f74e6c7b6815f
