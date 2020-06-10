@@ -15,21 +15,39 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="LeetcodeForCpp.cpp">
+    <ClCompile Include="utils_vector.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="Tester.cpp">
+    <ClCompile Include="utils.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="Solution.cpp">
+    <ClCompile Include="tester.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="solution.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="leetcode_for_cpp.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="utils_string.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="utils_array.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="utils_map.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Tester.h">
+    <ClInclude Include="utils.hpp">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="Solution.h">
+    <ClInclude Include="tester.hpp">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="solution.hpp">
       <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>
