@@ -3,7 +3,7 @@
 #include <unordered_map>
 #include <tuple>
 
-#include "leetcode.h"
+#include "leetcode.hpp"
 #include "Solution.h"
 #include "Tester.h"
 

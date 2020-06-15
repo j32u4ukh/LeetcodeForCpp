@@ -3,7 +3,7 @@
 #pragma once
 #include <vector>
 #include "Solution.h"
-#include "leetcode.h"
+#include "leetcode.hpp"
 
 using namespace std;
 

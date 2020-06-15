@@ -1,5 +1,5 @@
-#ifndef _LEETCODE_H_
-#define _LEETCODE_H_
+#ifndef _LEETCODE_HPP_
+#define _LEETCODE_HPP_
 #pragma once
 #include <iostream>
 #include <vector>
@@ -72,4 +72,4 @@ struct ListNode {
 
 ListNode* vectorToListNode(const vector<int>& vi);
 bool isSameListNode(ListNode* l1, ListNode* l2);
-#endif _LEETCODE_H_
+#endif _LEETCODE_HPP_
