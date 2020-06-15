@@ -1,5 +1,5 @@
 # LeetcodeForCpp
-利用 leetcode 來複習 C++，利用函式名稱來區分各題解答
+利用 leetcode 來複習 C++，利用函式名稱來區分各題解答，函式名稱為該題提交時所用的名稱，很可惜和題目名稱本身不同。
 
 leetcode_for_cpp.cpp 為程式進入點，包含 main() 函式。
 
