@@ -23,5 +23,6 @@ public:
     bool isValid(string s);
     ListNode* mergeTwoLists(ListNode* l1, ListNode* l2);
     int removeDuplicates(vector<int>& nums);
+    int removeElement(vector<int>& nums, int val);
 };
 #endif _SOLUTION_H_

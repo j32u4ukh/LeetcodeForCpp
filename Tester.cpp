@@ -155,3 +155,48 @@ void Tester::removeDuplicates(Solution* sol, int(Solution::* func)(vector<int>& 
         cout << "Correct? " << (result == answers[i]) << endl;
     }
 }
+
+void Tester::removeElement(Solution* sol, int(Solution::* func)(vector<int>& nums, int val))
+{
+    vector<vector<int>> questions = {
+        {3,2,2,3},
+        {0,1,2,2,3,0,4,2},
+    };
+
+    vector<int> vals = {3, 2};
+
+    vector<int> question;
+    int val;
+
+    ////////////////////
+    vector<int> answers = { 2, 5 };
+    vector<vector<int>> new_nums = {
+        {2,2},
+        {0,1,3,0,4},
+    };
+
+    int answer;
+    vector<int> new_num;
+
+    int i, len = vals.size(), j, result;
+    for (i = 0; i < len; i++) {
+        question = questions[i];
+        val = vals[i];
+        result = (sol->*func)(question, val);
+        answer = answers[i];
+
+        if (result == answer) {
+            cout << "Correct" << endl;
+            for (j = 0; j < result; j++) {
+                cout << "answer: " << new_nums[i][j] 
+                     << ", result:" << question[j] 
+                     << ", correct? " << (new_nums[i][j] == question[j]) << endl;
+            }
+        }
+        else {
+            cout << "Wrong" << endl;
+        }
+
+        cout << "====================" << endl;
+    }
+}

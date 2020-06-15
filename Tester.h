@@ -20,6 +20,7 @@ public:
 	void isValid(Solution* sol, bool(Solution::* func)(string s));
 	void mergeTwoLists(Solution* sol, ListNode* (Solution::* func)(ListNode* l1, ListNode* l2));
 	void removeDuplicates(Solution* sol, int (Solution::* func)(vector<int>& nums));
+	void removeElement(Solution* sol, int (Solution::* func)(vector<int>& nums, int val));
 
 };
 #endif _TESTER_H_

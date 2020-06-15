@@ -390,3 +390,16 @@ int Solution::removeDuplicates(vector<int>& nums)
 #pragma endregion
 
 
+int Solution::removeElement(vector<int>& nums, int val)
+{
+    int input, output = 0, temp, len = nums.size();
+
+    for (input = 0; input < len; input++) {
+        if (nums[input] != val) {
+            nums[output] = nums[input];
+            output++;
+        }
+    }
+
+    return output;
+}

@@ -56,29 +56,6 @@ int main()
     //tester.longestCommonPrefix(&solution, &Solution::longestCommonPrefix);
     //tester.isValid(&solution, &Solution::isValid);
     //tester.mergeTwoLists(&solution, &Solution::mergeTwoLists);
-    tester.removeDuplicates(&solution, &Solution::removeDuplicates);
-    //vector<int> nums = { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 };
-    //int len = solution.removeDuplicates(nums);
-    //cout << "nums: " << nums << endl;
-
-    //vector<int>::iterator it;
-    //int last;
-
-    //if (nums.size() > 0) {
-    //    last = nums[0];
-    //    cout << "last: " << last << endl;
-    //}
-
-    //for (it = nums.begin() + 1; it != nums.end(); it++) {
-    //    if (*it == last) {
-    //        it = nums.erase(it);
-    //        it--;
-    //    }
-    //    else {
-    //        last = *it;
-    //        cout << "last: " << last << endl;
-    //    }
-    //}
-
-    //cout << "length: " << nums.size() << endl;
+    //tester.removeDuplicates(&solution, &Solution::removeDuplicates);
+    tester.removeElement(&solution, &Solution::removeElement);
 }
