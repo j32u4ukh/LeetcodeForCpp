@@ -1,5 +1,8 @@
 #include <iostream>
+#include "math.h"
 #include "Tester.h"
+#include "Solution.h"
+#include "utils.hpp"
 
 using namespace std;
 
@@ -27,6 +30,41 @@ void Tester::twoSum(Solution* sol, vector<int>(Solution::* func)(vector<int>&, i
     }
     cout << endl;
 };
+
+void Tester::reverseInteger(Solution* sol, int (Solution::* func)(int)) {
+    cout << "INT32_MIN:" << INT32_MIN << ", INT32_MAX:" << INT32_MAX << endl;
+
+    int q, len, answer, question;
+    int questions[] = { 123, -123, 120, -2147483412, -2147483648 };
+    len = sizeof(questions) / sizeof(int);
+
+    for (q = 0; q < len; q++) {
+        question = questions[q];
+
+        answer = (sol->*func)(question);
+        cout << "Q" << q + 1 << ":" << question << " >> " << answer << endl;
+    }
+}
+
+void Tester::palindromeNumber(Solution* sol, bool (Solution::* func)(int)) {
+    int q, len, question;
+    int questions[] = { 121, -121, 10};
+    bool answers[] = {true, false, false};
+    bool answer, result;
+
+    len = _countof(questions);
+
+    for (q = 0; q < len; q++) {
+        question = questions[q];
+        answer = answers[q];
+        result = (sol->*func)(question);
+
+        cout << "question: " << question 
+             << ", result: " << utils::boolToString(result)
+             << ", answer: " << utils::boolToString(answer)
+             << ", correct: " << utils::boolToString(result == answer) << endl;
+    }
+}
 
 void Tester::romanToInt(Solution* sol, int(Solution::* func)(string s))
 {
@@ -200,3 +238,4 @@ void Tester::removeElement(Solution* sol, int(Solution::* func)(vector<int>& num
         cout << "====================" << endl;
     }
 }
+

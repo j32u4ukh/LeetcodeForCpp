@@ -147,6 +147,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="utils.cpp" />
+    <ClCompile Include="utils_array.cpp" />
+    <ClCompile Include="utils_map.cpp" />
+    <ClCompile Include="utils_string.cpp" />
+    <ClCompile Include="utils_vector.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="utils.hpp" />
     <ClCompile Include="leetcode.cpp" />
     <ClCompile Include="LeetcodeForCpp.cpp" />
     <ClCompile Include="Solution.cpp" />

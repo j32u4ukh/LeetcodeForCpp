@@ -17,8 +17,10 @@ public:
 
     Solution();
     void classFunctionPointer(int val);
-    vector<int> twoSum(vector<int>& nums, int target);
-    int romanToInt(string s);
+    vector<int> twoSum(vector<int>&, int);
+    int reverseInteger(int);
+    bool palindromeNumber(int);
+    int romanToInt(string);
     string longestCommonPrefix(vector<string>& strs);
     bool isValid(string s);
     ListNode* mergeTwoLists(ListNode* l1, ListNode* l2);

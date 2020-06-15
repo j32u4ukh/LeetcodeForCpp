@@ -1,0 +1,33 @@
+﻿  utils.cpp
+  utils_array.cpp
+  utils_map.cpp
+  utils_string.cpp
+D:\OpenGLearning\LeetcodeForCpp\utils_string.cpp(11,25): warning C4267: '引數': 將 'size_t' 轉換為 'const _Ty'，資料可能遺失
+          with
+          [
+              _Ty=int
+          ]
+  utils_vector.cpp
+D:\OpenGLearning\LeetcodeForCpp\utils_vector.cpp(15,26): warning C4267: '正在初始化': 將 'size_t' 轉換為 'int'，資料可能遺失
+  leetcode.cpp
+D:\OpenGLearning\LeetcodeForCpp\leetcode.cpp(6,24): warning C4267: '正在初始化': 將 'size_t' 轉換為 'int'，資料可能遺失
+  LeetcodeForCpp.cpp
+  Solution.cpp
+D:\OpenGLearning\LeetcodeForCpp\Solution.cpp(45,30): warning C4267: '正在初始化': 將 'size_t' 轉換為 'int'，資料可能遺失
+D:\OpenGLearning\LeetcodeForCpp\Solution.cpp(112,28): warning C4267: '正在初始化': 將 'size_t' 轉換為 'int'，資料可能遺失
+D:\OpenGLearning\LeetcodeForCpp\Solution.cpp(179,1): error C2084: 函式 'int Solution::romanToInt(std::string)' 的主體已經被宣告了
+D:\OpenGLearning\LeetcodeForCpp\Solution.cpp(124): message : 請參閱 'romanToInt' 之前的定義
+D:\OpenGLearning\LeetcodeForCpp\Solution.cpp(219,31): warning C4267: '正在初始化': 將 'size_t' 轉換為 'int'，資料可能遺失
+D:\OpenGLearning\LeetcodeForCpp\Solution.cpp(228,44): warning C4267: '正在初始化': 將 'size_t' 轉換為 'int'，資料可能遺失
+D:\OpenGLearning\LeetcodeForCpp\Solution.cpp(231,48): warning C4267: '=': 將 'size_t' 轉換為 'int'，資料可能遺失
+D:\OpenGLearning\LeetcodeForCpp\Solution.cpp(261,25): warning C4267: '正在初始化': 將 'size_t' 轉換為 'int'，資料可能遺失
+D:\OpenGLearning\LeetcodeForCpp\Solution.cpp(354,28): warning C4267: '正在初始化': 將 'size_t' 轉換為 'int'，資料可能遺失
+D:\OpenGLearning\LeetcodeForCpp\Solution.cpp(494,19): warning C4267: 'return': 將 'size_t' 轉換為 'int'，資料可能遺失
+D:\OpenGLearning\LeetcodeForCpp\Solution.cpp(510,23): warning C4267: 'return': 將 'size_t' 轉換為 'int'，資料可能遺失
+D:\OpenGLearning\LeetcodeForCpp\Solution.cpp(517,51): warning C4267: '正在初始化': 將 'size_t' 轉換為 'int'，資料可能遺失
+  Tester.cpp
+D:\OpenGLearning\LeetcodeForCpp\Tester.cpp(98,32): warning C4267: '正在初始化': 將 'size_t' 轉換為 'int'，資料可能遺失
+D:\OpenGLearning\LeetcodeForCpp\Tester.cpp(159,32): warning C4267: '正在初始化': 將 'size_t' 轉換為 'int'，資料可能遺失
+D:\OpenGLearning\LeetcodeForCpp\Tester.cpp(186,32): warning C4267: '正在初始化': 將 'size_t' 轉換為 'int'，資料可能遺失
+D:\OpenGLearning\LeetcodeForCpp\Tester.cpp(219,29): warning C4267: '正在初始化': 將 'size_t' 轉換為 'int'，資料可能遺失
+  正在產生程式碼...
